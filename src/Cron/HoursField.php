@@ -18,7 +18,7 @@ class HoursField extends AbstractField
         // allow us to go back or forwards and hour even
         // if DST will be changed between the hours.
         $timezone = $date->getTimezone();
-        $date->setTimezone(new \DateTimeZone('UTC'));
+        //$date->setTimezone(new \DateTimeZone('UTC'));
         if ($invert) {
             $date->modify('-1 hour');
             $date->setTime($date->format('H'), 59);
@@ -26,7 +26,7 @@ class HoursField extends AbstractField
             $date->modify('+1 hour');
             $date->setTime($date->format('H'), 0);
         }
-        $date->setTimezone($timezone);
+        //$date->setTimezone($timezone);
 
         return $this;
     }
