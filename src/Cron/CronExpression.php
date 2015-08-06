@@ -345,7 +345,7 @@ class CronExpression
         }
 
         // @codeCoverageIgnoreStart
-        throw new \RuntimeException('Impossible CRON expression');
+        throw new \RuntimeException('Impossible CRON expression: ' . implode(' ', $this->cronParts));
         // @codeCoverageIgnoreEnd
     }
 }
